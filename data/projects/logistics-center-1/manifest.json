@@ -1,0 +1,17 @@
+{
+  "id": "logistics-center-1",
+  "title": "Логістичний центр з холодильними камерами",
+  "description": "Проектування сучасного логістичного центру з температурним контролем для зберігання продукції. Включає автоматизовані складські системи, холодильне обладнання та зони навантаження.",
+  "category": "logistics",
+  "area": "12000 м²",
+  "year": "2023",
+  "location": "Дніпропетровська обл.",
+  "thumbnail": "https://dummyimage.com/800x600/e5e7eb/6b7280&text=Логістичний+центр",
+  "images": [
+    "https://dummyimage.com/1200x800/f3f4f6/6b7280&text=Фото+1",
+    "https://dummyimage.com/1200x800/f3f4f6/6b7280&text=Фото+2",
+    "https://dummyimage.com/1200x800/f3f4f6/6b7280&text=Фото+3",
+    "https://dummyimage.com/1200x800/f3f4f6/6b7280&text=Фото+4"
+  ],
+  "featured": true
+}
