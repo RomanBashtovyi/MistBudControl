@@ -17,14 +17,15 @@ export const PARTNERS: Partner[] = [
   {
     id: "kontakt",
     name: "МП «КОНТАКТ»",
-    logo: "/partners/kontakt.png",
+    logo: "/partners/contact.png",
     location: "Полтавська обл., м.Миргород",
-    website: "https://www.1mirgorod.biz/",
+    website: "https://www.mirgorod.biz/",
+    logoBackgroundClass: "bg-slate-100",
   },
   {
     id: "agroresurs",
     name: "ТОВ «АГРОРЕСУРС»",
-    logo: "/partners/agroresurs.png",
+    logo: "/partners/agroresurs.svg",
     location: "Кіровоградська обл., м.Кропивницький",
     website: "https://www.agrs.group/",
   },
@@ -34,6 +35,7 @@ export const PARTNERS: Partner[] = [
     logo: "/partners/prombudcentr.png",
     location: "Київська обл., Києво-Святошинський р-н, с. Святопетрівське",
     website: "https://prombudcentr.ua/",
+    logoBackgroundClass: "bg-slate-100",
   },
   {
     id: "scanmix",

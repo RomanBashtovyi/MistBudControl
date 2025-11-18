@@ -1,38 +1,46 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { ProjectCard } from "@/components/ProjectCard";
-import { getFeaturedProjects } from "@/lib/projects";
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+import { ProjectCard } from '@/components/ProjectCard'
+import { getFeaturedProjects } from '@/lib/projects'
 
 export async function FeaturedProjectsSection() {
-  const featuredProjects = await getFeaturedProjects();
+  const featuredProjects = await getFeaturedProjects()
 
   if (featuredProjects.length === 0) {
-    return null;
+    return null
   }
 
   return (
-    <section className="container py-12 md:py-16 lg:py-20">
-      <div className="space-y-3 md:space-y-4 text-center mb-10 md:mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold">Наша реалізація</h2>
-        <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-          Перегляньте приклади наших реалізованих проектів промислових об'єктів
-        </p>
-      </div>
+    <section className="section-spacing bg-background-secondary">
+      <div className="container">
+        <div className="space-y-4 md:space-y-6 text-center mb-12 md:mb-16 px-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
+            <span className="text-charcoal">Наша </span>
+            <span className="text-primary">реалізація</span>
+          </h2>
+          <p className="text-lg md:text-xl text-text-secondary  mx-auto leading-relaxed">
+            Перегляньте приклади наших реалізованих проектів
+            промислових об&apos;єктів
+          </p>
+        </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 mb-8 md:mb-10">
-        {featuredProjects.slice(0, 6).map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
-      </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-10 md:mb-12">
+          {featuredProjects.slice(0, 6).map((project) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+            />
+          ))}
+        </div>
 
-      <div className="text-center">
-        <Button variant="outline" size="lg" asChild className="w-full sm:w-auto">
-          <Link href="/projects">
-            Переглянути всі проекти
-          </Link>
-        </Button>
+        <div className="text-center">
+          <Button variant="outline" size="lg" asChild>
+            <Link href="/projects">
+              Переглянути всі проекти
+            </Link>
+          </Button>
+        </div>
       </div>
     </section>
-  );
+  )
 }
-

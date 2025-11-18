@@ -36,6 +36,7 @@ export interface Partner {
   logo: string;
   website?: string;
   location?: string;
+  logoBackgroundClass?: string;
 }
 
 // Contact info

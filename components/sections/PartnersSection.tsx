@@ -1,38 +1,54 @@
-import { PARTNERS } from "@/constants/site";
+import Image from 'next/image'
+
+import { PARTNERS } from '@/constants/site'
 
 export function PartnersSection() {
   return (
-    <section className="border-t bg-muted/40">
-      <div className="container py-12 md:py-16 lg:py-20">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 md:mb-12">
-          Наші партнери
+    <section className="section-spacing bg-background-secondary">
+      <div className="container">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-10 md:mb-16 px-4">
+          <span className="text-charcoal">Наші </span>
+          <span className="text-primary">партнери</span>
         </h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6 lg:gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto px-4">
           {PARTNERS.map((partner) => (
-            <div
+            <a
               key={partner.id}
-              className="bg-card rounded-lg border p-4 md:p-5 lg:p-6 flex flex-col items-center justify-center space-y-3 text-center hover:shadow-md transition-shadow"
+              href={partner.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Відкрити сайт компанії ${partner.name}`}
+              className="group bg-white/95 rounded-[26px] shadow-[0_18px_40px_rgba(15,23,42,0.08)] p-6 sm:p-8 flex flex-col items-center justify-between text-center border border-slate-200 ring-1 ring-slate-100 hover:ring-primary/30 hover:-translate-y-1 transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary min-h-[230px]"
             >
-              {/* Placeholder for partner logo */}
-              <div className="w-full h-16 md:h-20 bg-muted rounded flex items-center justify-center text-xs text-muted-foreground">
-                Logo
+              <div
+                className={`w-full flex-1 flex items-center justify-center mb-5 rounded-2xl p-4 h-28 transition-colors ${
+                  partner.logoBackgroundClass ??
+                  'bg-charcoal'
+                }`}
+              >
+                <Image
+                  src={partner.logo}
+                  alt={`Логотип компанії ${partner.name}`}
+                  width={220}
+                  height={90}
+                  className="w-full max-h-20 object-contain drop-shadow-md"
+                />
               </div>
-              <div className="space-y-1 w-full">
-                <p className="font-semibold text-xs md:text-sm leading-tight">
+              <div className="space-y-2 w-full">
+                <p className="font-bold text-base sm:text-lg text-charcoal leading-tight group-hover:text-primary transition-colors">
                   {partner.name}
                 </p>
                 {partner.location && (
-                  <p className="text-[10px] md:text-xs text-muted-foreground line-clamp-2 leading-snug">
+                  <p className="text-sm sm:text-base text-text-muted leading-snug">
                     {partner.location}
                   </p>
                 )}
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
     </section>
-  );
+  )
 }
-

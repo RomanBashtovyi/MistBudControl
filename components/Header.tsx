@@ -2,14 +2,8 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { Menu } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-  SheetTitle,
-} from '@/components/ui/sheet'
 import { SITE_CONFIG } from '@/constants/site'
 import { useState } from 'react'
 
@@ -17,85 +11,89 @@ export function Header() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background">
-      <div className="container flex h-16 items-center justify-between">
+    <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
+      <nav className="container flex min-h-[80px] md:min-h-[88px] lg:min-h-[96px] items-center justify-between py-3">
         <Link
           href="/"
-          className="flex items-center space-x-3"
+          className="flex items-center hover:opacity-90 transition-opacity"
         >
           <Image
             src="/logo.png"
             alt={SITE_CONFIG.name}
-            width={56}
-            height={56}
-            className="h-14 w-auto"
+            width={276}
+            height={92}
+            className="h-[60px] md:h-[70px] lg:h-[78px] w-auto"
+            priority
           />
-          <span className="font-bold text-lg">
-            {SITE_CONFIG.name}
-          </span>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
+        <div className="hidden lg:flex items-center gap-6 xl:gap-8">
           <Link
             href="/"
-            className="text-sm font-medium transition-colors hover:text-primary"
+            className="text-lg font-medium text-text-secondary hover:text-primary hover:underline underline-offset-8 transition-all whitespace-nowrap"
           >
             Головна
           </Link>
           <Link
             href="/projects"
-            className="text-sm font-medium transition-colors hover:text-primary"
+            className="text-lg font-medium text-text-secondary hover:text-primary hover:underline underline-offset-8 transition-all whitespace-nowrap"
           >
             Проекти
           </Link>
-          <Button asChild>
-            <Link href="#contact">
-              Зв&apos;язатися з директором
-            </Link>
+          <Button size="default" asChild>
+            <Link href="#contact">Зв&apos;язатися</Link>
           </Button>
-        </nav>
+        </div>
 
         {/* Mobile Navigation */}
-        <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon">
-              <Menu className="h-5 w-5" />
-            </Button>
-          </SheetTrigger>
-          <SheetContent className="w-[300px] sm:w-[400px]">
-            <SheetTitle className="sr-only">
-              Навігаційне меню
-            </SheetTitle>
-            <nav className="flex flex-col space-y-6">
-              <Link
-                href="/"
-                className="text-lg font-medium transition-colors hover:text-primary py-2 border-b"
-                onClick={() => setOpen(false)}
-              >
-                Головна
-              </Link>
-              <Link
-                href="/projects"
-                className="text-lg font-medium transition-colors hover:text-primary py-2 border-b"
-                onClick={() => setOpen(false)}
-              >
-                Проекти
-              </Link>
-              <div className="pt-4">
-                <Button
-                  asChild
-                  className="w-full"
-                  onClick={() => setOpen(false)}
-                >
-                  <Link href="#contact">
-                    Зв&apos;язатися з директором
-                  </Link>
-                </Button>
-              </div>
-            </nav>
-          </SheetContent>
-        </Sheet>
+        <div className="lg:hidden">
+          <Button
+            variant="ghost"
+            size="icon"
+            aria-expanded={open}
+            aria-label={
+              open ? 'Закрити меню' : 'Відкрити меню'
+            }
+            onClick={() => setOpen((prev) => !prev)}
+          >
+            {open ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </Button>
+        </div>
+      </nav>
+      <div
+        className={`lg:hidden overflow-hidden transition-all duration-300 ${
+          open ? 'max-h-96 py-4' : 'max-h-0'
+        }`}
+      >
+        <nav className="container flex flex-col gap-4">
+          <Link
+            href="/"
+            className="text-lg font-medium text-text-secondary hover:text-primary transition-colors"
+            onClick={() => setOpen(false)}
+          >
+            Головна
+          </Link>
+          <Link
+            href="/projects"
+            className="text-lg font-medium text-text-secondary hover:text-primary transition-colors"
+            onClick={() => setOpen(false)}
+          >
+            Проекти
+          </Link>
+          <Button
+            asChild
+            className="w-full"
+            size="lg"
+            onClick={() => setOpen(false)}
+          >
+            <Link href="#contact">Зв&apos;язатися</Link>
+          </Button>
+        </nav>
       </div>
     </header>
   )
