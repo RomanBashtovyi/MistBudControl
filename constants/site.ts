@@ -2,6 +2,9 @@ import type {
   CompanyStats,
   Partner,
   ContactInfo,
+  Technology,
+  HeroContent,
+  NavigationItem,
 } from '@/types'
 
 export const SITE_CONFIG = {
@@ -22,7 +25,7 @@ export const PARTNERS: Partner[] = [
     id: 'kontakt',
     name: 'МП «КОНТАКТ»',
     logo: '/partners/contact.png',
-    location: 'Полтавська обл., м.Миргород',
+    location: 'Полтавська обл.',
     website: 'https://www.mirgorod.biz/',
     logoBackgroundClass: 'bg-slate-100',
   },
@@ -30,15 +33,14 @@ export const PARTNERS: Partner[] = [
     id: 'agroresurs',
     name: 'ТОВ «АГРОРЕСУРС»',
     logo: '/partners/agroresurs.svg',
-    location: 'Кіровоградська обл., м.Кропивницький',
+    location: 'Кіровоградська обл.',
     website: 'https://www.agrs.group/',
   },
   {
     id: 'prombudcentr',
     name: 'ТОВ «ПРОМБУДЦЕНТР»',
     logo: '/partners/prombudcentre.webp',
-    location:
-      'Київська обл., Києво-Святошинський р-н, с. Святопетрівське',
+    location: 'Київська обл.',
     website: 'https://prombudcentr.ua/',
     logoBackgroundClass: 'bg-slate-100',
   },
@@ -46,14 +48,16 @@ export const PARTNERS: Partner[] = [
     id: 'scanmix',
     name: 'ТОВ «СКАНМІКС-УКРАЇНА»',
     logo: '/partners/scanmix-logos.png',
-    location: 'Полтавська обл., м. Полтава',
+    location: 'Полтавська обл.',
     website: 'http://scanmix.ua/',
   },
 ]
 
 export const DIRECTOR_CONTACT: ContactInfo = {
-  name: 'Директор компанії',
-  position: 'Директор',
+  name: 'Валентин Погорілий',
+  position: 'Директор, головний архітектор',
+  description:
+    'Особисто відповідаю на всі звернення, контролюю архітектуру та готовий обговорити технічні деталі, терміни виконання та вартість вашого проєкту.',
   phone: '+38 (000) 000-00-00',
   email: 'info@mistbudcontrol.ua',
   photo: '/team/director.jpg',
@@ -63,6 +67,8 @@ export const SPECIALIZATIONS = [
   {
     title: 'Склади сировини',
     percentage: '50%',
+    description:
+      'Комплексно проєктуємо складські обʼєкти та логістичні вузли з урахуванням санітарних і технологічних вимог.',
     items: [
       'Склади готової продукції',
       'Логістичні центри',
@@ -71,6 +77,8 @@ export const SPECIALIZATIONS = [
   {
     title: 'Виробничі комплекси',
     percentage: '20%',
+    description:
+      'Опрацьовуємо технологічні схеми, конструктив та інженерію для різних типів виробничих цехів.',
     items: [
       'Металообробні майстерні',
       'Ремонтні майстерні',
@@ -79,6 +87,8 @@ export const SPECIALIZATIONS = [
   {
     title: 'Підприємства харчування',
     percentage: '10%',
+    description:
+      'Готуємо робочу документацію для харчових виробництв із контролем санітарних норм та безпеки.',
     items: [
       'Цех переробки зерна',
       'Елеватор зберігання та сушки зерна',
@@ -88,42 +98,136 @@ export const SPECIALIZATIONS = [
     title:
       'Будівлі з обслуговування автомобільного транспорту',
     percentage: '20%',
+    description:
+      'Проєктуємо інфраструктуру для сервісу транспорту з урахуванням реальних потоків і режимів роботи.',
     items: ['Автостоянка, гаражі', 'СТО, АЗС'],
   },
 ] as const
 
-export const TECHNOLOGIES = [
+export const TECHNOLOGIES: Technology[] = [
   {
     title: 'BIM моделювання',
-    description: 'REVIT, ArchiCAD, SketchUp',
     category: 'modeling',
+    items: [
+      {
+        name: 'REVIT',
+        icon: '/technologies/revit-icon.svg',
+      },
+      {
+        name: 'ArchiCAD',
+        icon: '/technologies/archicad.svg',
+      },
+      {
+        name: 'SketchUp',
+        icon: '/technologies/sketchup-icon.svg',
+      },
+    ],
   },
   {
-    title: 'Task manager / PM система',
-    description: 'Worksection',
-    category: 'management',
-  },
-  {
-    title: 'Рендер model',
-    description: 'ReRender, Lumion, BIMteam',
+    title: 'Візуалізація проєктів',
     category: 'rendering',
+    items: [
+      {
+        name: 'ReRender',
+        icon: '/technologies/rerender-icon.svg',
+      },
+      {
+        name: 'Lumion',
+        icon: '/technologies/lumion.svg',
+      },
+      {
+        name: 'BIMteam',
+        icon: '/technologies/bimteam.png',
+      },
+    ],
   },
-] as const
+]
 
 export const BENEFITS = [
   {
-    title: 'Партнерство та комунікація',
+    titleLine1: 'Партнерство і',
+    titleLine2: 'комунікація',
     description:
-      'Розробка концепцій, планів виробництв, статистична інформація, новітні технології будівництва, раціональні контрольні.',
+      'Ми забезпечуємо прозору взаємодію на всіх рівнях: від розробки концепцій і планів виробництва до аналізу статистичної інформації та впровадження сучасних технологій будівництва й раціональних методів контролю.',
   },
   {
-    title: 'Інженерний ресурс',
+    titleLine1: 'Інженерний',
+    titleLine2: 'ресурс',
     description:
-      'Консультація від команди щодо впровадження ефективних інженерних систем на забезпечення виробничих потреб підприємств',
+      'Консультації команди з впровадження ефективних інженерних систем для задоволення виробничих потреб підприємств.',
   },
   {
-    title: 'Ефективне будівництво',
+    titleLine1: 'Ефективне',
+    titleLine2: 'будівництво',
     description:
-      'Інтеграція бізнес планування у процеси проєктування, будівництва та виробництва. Застосування найбільш ефективних методів',
+      'Інтегруємо бізнес-планування у процеси проєктування, будівництва та виробництва, застосовуючи найефективніші методи.',
   },
 ] as const
+
+export const HERO_CONTENT: HeroContent = {
+  title: {
+    line1: 'ПРОЄКТУЄМО ПРОМИСЛОВІ',
+    line2: 'БУДІВЛІ ТА СПОРУДИ',
+  },
+  description:
+    "Повний цикл: від концепції та розміщення обладнання до дозвільної документації, авторського нагляду та введення об'єкта в експлуатацію. Враховуємо технологічні, екологічні, енергетичні вимоги та техумови підключення інженерних систем, забезпечуючи ефективну автоматизацію виробничих процесів.",
+  buttons: {
+    primary: 'Переглянути проєкти',
+    secondary: 'Консультація з архітектором',
+  },
+}
+
+export const NAVIGATION: NavigationItem[] = [
+  {
+    label: 'Про компанію',
+    href: '/',
+  },
+  {
+    label: 'Проєкти',
+    href: '/projects',
+  },
+  {
+    label: "Зв'язатися",
+    href: '#contact',
+  },
+]
+
+export const SECTION_HEADINGS = {
+  featuredProjects: {
+    title: "Реалізовані об'єкти",
+  },
+  allProjects: {
+    title: 'Наші проєкти',
+    subtitle:
+      "Перегляньте приклади наших реалізованих проєктів промислових об'єктів",
+  },
+} as const
+
+export const PROJECT_CATEGORY_LABELS: Record<
+  string,
+  string
+> = {
+  warehouse: 'Склад',
+  production: 'Виробництво',
+  logistics: 'Логістика',
+  metalworking: 'Металообробка',
+  'grain-processing': 'Переробка зерна',
+  'transport-service': 'Транспортне обслуговування',
+  other: 'Інше',
+}
+
+export const UI_TEXT = {
+  viewAllProjects: 'Переглянути всі проєкти',
+  openMenu: 'Відкрити меню',
+  closeMenu: 'Закрити меню',
+  noProjects:
+    'Проєкти відсутні. Додайте перший проєкт у data/projects/',
+} as const
+
+export const FOOTER_TEXT = {
+  companyDescription:
+    'Професійне проєктування промислових будівель та споруд',
+  contactsTitle: 'Контакти',
+  navigationTitle: 'Навігація',
+  copyright: 'Всі права захищені.',
+} as const

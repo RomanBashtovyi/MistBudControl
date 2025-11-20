@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import { HERO_CONTENT } from '@/constants/site'
 
 export function HeroSection() {
   return (
@@ -8,23 +9,15 @@ export function HeroSection() {
         <div className="mx-auto text-center space-y-6 md:space-y-6 px-2">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-balance text-primary space-y-2">
             <span className="block ">
-              ПРОЄКТУЄМО ПРОМИСЛОВІ
+              {HERO_CONTENT.title.line1}
             </span>
             <span className="block">
-              БУДІВЛІ ТА СПОРУДИ
+              {HERO_CONTENT.title.line2}
             </span>
           </h1>
 
           <div className="mx-auto w-full space-y-1 text-text-secondary text-base md:text-xl leading-relaxed text-center md:text-center">
-            <p>
-              Повний цикл: від концепції та розміщення
-              обладнання до дозвільної документації,
-              авторського нагляду та введення об’єкта в
-              експлуатацію. Враховуємо технологічні,
-              екологічні, енергетичні вимоги та техумови
-              підключення інженерних систем, забезпечуючи
-              ефективну автоматизацію виробничих процесів.
-            </p>
+            <p>{HERO_CONTENT.description}</p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center pt-4 md:pt-8">
@@ -34,7 +27,7 @@ export function HeroSection() {
               asChild
             >
               <Link href="/projects">
-                Переглянути проєкти
+                {HERO_CONTENT.buttons.primary}
               </Link>
             </Button>
             <Button
@@ -44,7 +37,7 @@ export function HeroSection() {
               asChild
             >
               <Link href="#contact">
-                Консультація з архітектором
+                {HERO_CONTENT.buttons.secondary}
               </Link>
             </Button>
           </div>

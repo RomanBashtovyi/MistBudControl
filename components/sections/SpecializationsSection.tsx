@@ -1,5 +1,6 @@
 import { SPECIALIZATIONS } from '@/constants/site'
 import { cn } from '@/lib/utils'
+import { HiCheckCircle } from 'react-icons/hi'
 
 export function SpecializationsSection() {
   return (
@@ -16,11 +17,10 @@ export function SpecializationsSection() {
         >
           <h2
             className={cn(
-              'text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-charcoal'
+              'text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-primary'
             )}
           >
-            Ми зробили{' '}
-            <span className="text-primary">найбільше</span>
+            Широкий спектр об’єктів
           </h2>
           <p
             className={cn(
@@ -42,70 +42,62 @@ export function SpecializationsSection() {
             <article
               key={index}
               className={cn(
-                'relative h-full rounded-[26px] bg-gradient-to-br from-primary/20 via-transparent to-charcoal/10 p-[1px] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_25px_60px_rgba(15,23,42,0.18)]'
+                'relative h-full rounded-[28px] bg-white p-[1.5px] shadow-[0_20px_60px_rgba(15,23,42,0.08)]'
               )}
             >
               <div
                 className={cn(
-                  'flex h-full flex-col rounded-[24px] bg-white px-5 py-6 md:px-7 md:py-8 shadow-[0_18px_45px_rgba(15,23,42,0.12)]'
+                  'relative flex h-full flex-col rounded-[26px] bg-gradient-to-b from-white to-background-secondary/40 px-6 py-8 md:px-8 md:py-10'
                 )}
               >
-                <div className={cn('pb-5')}>
+                <span
+                  className={cn(
+                    'absolute top-4 right-4 md:top-6 md:right-6 inline-flex min-w-[80px] md:min-w-[120px] justify-center rounded-full bg-primary px-3 py-2 md:px-6 md:py-3 text-sm md:text-lg font-bold uppercase tracking-wide text-white shadow-[0_12px_30px_rgba(196,108,77,0.35)]'
+                  )}
+                >
+                  {specialization.percentage}
+                </span>
+
+                <div
+                  className={cn(
+                    'space-y-3 pr-24 md:pr-32 min-h-[60px] md:min-h-[80px]'
+                  )}
+                >
                   <h3
                     className={cn(
-                      'text-2xl font-bold text-charcoal leading-tight'
+                      'text-xl md:text-2xl font-bold leading-tight text-primary'
                     )}
                   >
                     {specialization.title}
                   </h3>
                 </div>
-                <div className={cn('flex flex-1 flex-col')}>
-                  <div
-                    className={cn(
-                      'mt-auto flex flex-col gap-4'
-                    )}
-                  >
-                    <ul
-                      className={cn(
-                        'space-y-3 text-lg text-charcoal'
-                      )}
-                    >
-                      {specialization.items.map(
-                        (item, itemIndex) => (
-                          <li
-                            key={itemIndex}
+
+                <div
+                  className={cn(
+                    'mt-auto flex flex-col pt-8'
+                  )}
+                >
+                  <ul className={cn('space-y-4')}>
+                    {specialization.items.map(
+                      (item, itemIndex) => (
+                        <li
+                          key={itemIndex}
+                          className={cn(
+                            'flex items-center gap-4 rounded-3xl bg-white/95 px-5 py-4 shadow-[0_15px_35px_rgba(15,23,42,0.1)] ring-1 ring-primary/20'
+                          )}
+                        >
+                          <HiCheckCircle className="h-8 w-8 flex-shrink-0 text-primary" />
+                          <span
                             className={cn(
-                              'flex items-center gap-4 rounded-2xl border border-charcoal/5 bg-background-secondary/70 px-4 py-3 w-full'
+                              'text-lg md:text-xl font-semibold leading-snug text-primary'
                             )}
                           >
-                            <span
-                              className={cn(
-                                'inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-sm font-semibold text-primary'
-                              )}
-                            >
-                              {String(
-                                itemIndex + 1
-                              ).padStart(2, '0')}
-                            </span>
-                            <span
-                              className={cn(
-                                'flex-1 leading-snug'
-                              )}
-                            >
-                              {item}
-                            </span>
-                          </li>
-                        )
-                      )}
-                    </ul>
-                    <div
-                      className={cn(
-                        'rounded-2xl bg-primary px-5 py-3 text-center text-3xl font-bold text-white'
-                      )}
-                    >
-                      {specialization.percentage}
-                    </div>
-                  </div>
+                            {item}
+                          </span>
+                        </li>
+                      )
+                    )}
+                  </ul>
                 </div>
               </div>
             </article>

@@ -28,11 +28,16 @@ export function PartnersSection() {
                   alt={`Логотип компанії ${partner.name}`}
                   width={220}
                   height={90}
-                  className="w-full max-h-24 object-contain drop-shadow-md"
+                  className={`w-full object-contain drop-shadow-md ${
+                    partner.id === 'kontakt' ||
+                    partner.id === 'scanmix'
+                      ? 'max-h-36'
+                      : 'max-h-24'
+                  }`}
                 />
               </div>
               <div className="space-y-2 w-full">
-                <p className="font-bold text-base sm:text-lg text-charcoal leading-tight">
+                <p className="font-bold text-base sm:text-lg text-primary leading-tight">
                   {partner.name}
                 </p>
                 {partner.location && (

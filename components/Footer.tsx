@@ -1,10 +1,16 @@
-import Image from "next/image";
-import Link from "next/link";
-import { Phone, Mail } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { SITE_CONFIG, DIRECTOR_CONTACT } from "@/constants/site";
+import Image from 'next/image'
+import Link from 'next/link'
+import { Phone, Mail } from 'lucide-react'
+import {
+  SITE_CONFIG,
+  DIRECTOR_CONTACT,
+  FOOTER_TEXT,
+  NAVIGATION,
+} from '@/constants/site'
 
 export function Footer() {
+  const [aboutLink, projectsLink] = NAVIGATION
+
   return (
     <footer className="bg-charcoal text-white py-12 md:py-16 lg:py-20">
       <div className="container">
@@ -21,19 +27,22 @@ export function Footer() {
               />
             </div>
             <p className="text-base md:text-lg text-gray-300 leading-relaxed">
-              Професійне проєктування промислових будівель та споруд
+              {FOOTER_TEXT.companyDescription}
             </p>
           </div>
 
           {/* Contacts */}
           <div className="text-center sm:text-left">
             <h3 className="text-xl md:text-2xl font-bold mb-6 text-white">
-              Контакти
+              {FOOTER_TEXT.contactsTitle}
             </h3>
             <ul className="space-y-4 text-base md:text-lg mb-6">
               <li>
                 <a
-                  href={`tel:${DIRECTOR_CONTACT.phone.replace(/\s/g, "")}`}
+                  href={`tel:${DIRECTOR_CONTACT.phone.replace(
+                    /\s/g,
+                    ''
+                  )}`}
                   className="inline-flex items-center gap-3 text-gray-300 hover:text-primary transition-colors group"
                 >
                   <Phone className="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform" />
@@ -46,35 +55,34 @@ export function Footer() {
                   className="inline-flex items-center gap-3 text-gray-300 hover:text-primary transition-colors group"
                 >
                   <Mail className="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform" />
-                  <span className="break-all">{DIRECTOR_CONTACT.email}</span>
+                  <span className="break-all">
+                    {DIRECTOR_CONTACT.email}
+                  </span>
                 </a>
               </li>
             </ul>
-            <Button asChild size="default" className="w-full sm:w-auto">
-              <Link href="#contact">Зв&apos;язатися</Link>
-            </Button>
           </div>
 
           {/* Navigation */}
           <div className="text-center sm:text-left sm:col-span-2 lg:col-span-1">
             <h3 className="text-xl md:text-2xl font-bold mb-6 text-white">
-              Навігація
+              {FOOTER_TEXT.navigationTitle}
             </h3>
             <ul className="space-y-4 text-base md:text-lg">
               <li>
-                <Link 
-                  href="/" 
+                <Link
+                  href={aboutLink.href}
                   className="text-gray-300 hover:text-primary transition-colors hover:underline underline-offset-4 inline-block"
                 >
-                  Головна
+                  {aboutLink.label}
                 </Link>
               </li>
               <li>
-                <Link 
-                  href="/projects" 
+                <Link
+                  href={projectsLink.href}
                   className="text-gray-300 hover:text-primary transition-colors hover:underline underline-offset-4 inline-block"
                 >
-                  Проєкти
+                  {projectsLink.label}
                 </Link>
               </li>
             </ul>
@@ -83,10 +91,11 @@ export function Footer() {
 
         <div className="pt-8 md:pt-10 text-center">
           <p className="text-sm md:text-base text-gray-400">
-            &copy; {new Date().getFullYear()} {SITE_CONFIG.name}. Всі права захищені.
+            &copy; {new Date().getFullYear()}{' '}
+            {SITE_CONFIG.name}. {FOOTER_TEXT.copyright}
           </p>
         </div>
       </div>
     </footer>
-  );
+  )
 }

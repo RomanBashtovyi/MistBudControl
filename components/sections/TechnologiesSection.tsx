@@ -1,9 +1,10 @@
 import { TECHNOLOGIES, BENEFITS } from '@/constants/site'
 import { cn } from '@/lib/utils'
-import { Cog, Factory, Handshake } from 'lucide-react'
+import { Cog, Handshake, TrendingUp } from 'lucide-react'
+import Image from 'next/image'
 
 export function TechnologiesSection() {
-  const benefitIcons = [Handshake, Cog, Factory]
+  const benefitIcons = [Handshake, Cog, TrendingUp]
 
   return (
     <section
@@ -37,13 +38,6 @@ export function TechnologiesSection() {
               'relative z-10 text-center space-y-4 md:space-y-6  mx-auto mb-12 md:mb-16 lg:w-3/4'
             )}
           >
-            <p
-              className={cn(
-                'text-sm uppercase tracking-[0.4em] text-white/70'
-              )}
-            >
-              Automation stack
-            </p>
             <h2
               className={cn(
                 'text-3xl md:text-4xl lg:text-5xl font-bold leading-tight'
@@ -61,49 +55,59 @@ export function TechnologiesSection() {
                 'text-lg md:text-xl text-white/80'
               )}
             >
-              Ми супроводжуємо команду на кожному етапі: від
-              концепції BIM до координації задач у
-              PM-системах та фінальної візуалізації.
+              Ми забезпечуємо повний супровід команди на
+              всіх етапах проєкту — від впровадження
+              BIM-концепцій і координації задач у системі
+              Worksection до створення фінальної
+              візуалізації.
             </p>
           </div>
 
           <div
             className={cn(
-              'relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-8 px-4'
+              'relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6 lg:gap-8 px-4'
             )}
           >
             {TECHNOLOGIES.map((tech, index) => (
               <article
                 key={index}
                 className={cn(
-                  'rounded-[22px] border border-white/10 bg-white/5 px-6 py-6 md:px-7 md:py-8 text-left space-y-4 shadow-[0_20px_40px_rgba(0,0,0,0.35)] transition duration-300 hover:-translate-y-1'
+                  'rounded-[22px] border border-white/10 bg-white/5 px-6 py-6 md:px-7 md:py-8 text-left space-y-5 shadow-[0_20px_40px_rgba(0,0,0,0.35)]'
                 )}
               >
-                <div
-                  className={cn(
-                    'flex items-center justify-between gap-3'
-                  )}
-                >
-                  <h3
-                    className={cn('text-xl font-semibold')}
-                  >
-                    {tech.title}
-                  </h3>
-                  <span
-                    className={cn(
-                      'text-sm uppercase tracking-[0.2em] text-white/50'
-                    )}
-                  >
-                    0{index + 1}
-                  </span>
-                </div>
-                <p
-                  className={cn(
-                    'text-base text-white/80 leading-relaxed'
-                  )}
-                >
-                  {tech.description}
-                </p>
+                <h3 className={cn('text-xl font-semibold')}>
+                  {tech.title}
+                </h3>
+                <ul className={cn('space-y-3')}>
+                  {tech.items.map((item, itemIndex) => (
+                    <li
+                      key={itemIndex}
+                      className={cn(
+                        'flex items-center gap-4 rounded-xl bg-white/5 px-5 py-4 border border-white/10'
+                      )}
+                    >
+                      <div
+                        className={cn(
+                          'relative h-14 w-14 flex-shrink-0'
+                        )}
+                      >
+                        <Image
+                          src={item.icon}
+                          alt={item.name}
+                          fill
+                          className={cn('object-contain')}
+                        />
+                      </div>
+                      <span
+                        className={cn(
+                          'text-base text-white/90 font-medium'
+                        )}
+                      >
+                        {item.name}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </article>
             ))}
           </div>
@@ -112,27 +116,16 @@ export function TechnologiesSection() {
         <div className={cn('space-y-10 md:space-y-12')}>
           <div
             className={cn(
-              'text-center space-y-3 md:space-y-4  mx-auto px-4 lg:w-2/3'
+              'text-center space-y-3 md:space-y-4 mx-auto px-4 lg:w-2/3'
             )}
           >
             <h2
               className={cn(
-                'text-3xl md:text-4xl font-bold'
+                'text-3xl md:text-4xl font-bold text-primary'
               )}
             >
-              <span className={cn('text-primary')}>
-                Наші{' '}
-              </span>
-              <span className={cn('text-primary')}>
-                переваги
-              </span>
+              Інтегруємо технології, процеси та команду
             </h2>
-            <p
-              className={cn('text-lg text-text-secondary')}
-            >
-              Інтегруємо технології, процеси та команду, щоб
-              забезпечити стабільну реалізацію проєктів.
-            </p>
           </div>
           <div
             className={cn(
@@ -147,41 +140,43 @@ export function TechnologiesSection() {
                 <article
                   key={index}
                   className={cn(
-                    'relative h-full rounded-[26px] bg-gradient-to-br from-primary/25 via-transparent to-charcoal/10 p-[1px] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_25px_60px_rgba(15,23,42,0.18)]'
+                    'relative h-full rounded-[26px] bg-gradient-to-br from-primary/25 via-transparent to-charcoal/10 p-[1px]'
                   )}
                 >
                   <div
                     className={cn(
-                      'flex h-full flex-col rounded-[24px] bg-white px-6 py-7 shadow-[0_20px_45px_rgba(15,23,42,0.1)] space-y-4'
+                      'flex h-full flex-col rounded-[24px] bg-white px-6 py-7 shadow-[0_20px_45px_rgba(15,23,42,0.1)]'
                     )}
                   >
                     <div
                       className={cn(
-                        'flex items-center gap-3'
+                        'flex items-center gap-4 mb-5'
                       )}
                     >
-                      <span
+                      <h3
                         className={cn(
-                          'inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary'
+                          'text-xl md:text-2xl font-semibold text-primary leading-tight flex-1'
                         )}
                       >
-                        <Icon className={cn('h-6 w-6')} />
-                      </span>
+                        <span className={cn('block')}>
+                          {benefit.titleLine1}
+                        </span>
+                        <span className={cn('block')}>
+                          {benefit.titleLine2}
+                        </span>
+                      </h3>
                       <span
                         className={cn(
-                          'text-sm font-semibold text-primary/80'
+                          'inline-flex h-20 w-20 md:h-24 md:w-24 flex-shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary'
                         )}
                       >
-                        0{index + 1}
+                        <Icon
+                          className={cn(
+                            'h-12 w-12 md:h-14 md:w-14'
+                          )}
+                        />
                       </span>
                     </div>
-                    <h3
-                      className={cn(
-                        'text-xl md:text-2xl font-semibold text-charcoal leading-tight'
-                      )}
-                    >
-                      {benefit.title}
-                    </h3>
                     <p
                       className={cn(
                         'text-base md:text-lg text-text-secondary leading-relaxed'

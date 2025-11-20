@@ -82,7 +82,7 @@ export function StatsSection() {
             <div
               key={index}
               className={cn(
-                'relative flex flex-col items-center justify-center text-center gap-3 md:gap-4 rounded-[28px] border border-white/10 bg-white/5 px-6 py-8 md:px-6 md:py-10 shadow-[0_25px_60px_rgba(0,0,0,0.35)] transition-transform duration-300 hover:-translate-y-1'
+                'relative flex flex-col items-center justify-center text-center gap-3 md:gap-4 rounded-[28px] border border-white/10 bg-white/5 px-6 py-8 md:px-6 md:py-10 shadow-[0_25px_60px_rgba(0,0,0,0.35)]'
               )}
             >
               <div

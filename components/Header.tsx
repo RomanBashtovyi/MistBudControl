@@ -4,11 +4,17 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { SITE_CONFIG } from '@/constants/site'
+import {
+  SITE_CONFIG,
+  NAVIGATION,
+  UI_TEXT,
+} from '@/constants/site'
 import { useState } from 'react'
 
 export function Header() {
   const [open, setOpen] = useState(false)
+
+  const [aboutLink, projectsLink, contactLink] = NAVIGATION
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
@@ -30,19 +36,21 @@ export function Header() {
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-6 xl:gap-8">
           <Link
-            href="/"
+            href={aboutLink.href}
             className="text-lg font-medium text-text-secondary hover:text-primary hover:underline underline-offset-8 transition-all whitespace-nowrap"
           >
-            Про компанію
+            {aboutLink.label}
           </Link>
           <Link
-            href="/projects"
+            href={projectsLink.href}
             className="text-lg font-medium text-text-secondary hover:text-primary hover:underline underline-offset-8 transition-all whitespace-nowrap"
           >
-            Проєкти
+            {projectsLink.label}
           </Link>
           <Button size="default" asChild>
-            <Link href="#contact">Зв&apos;язатися</Link>
+            <Link href={contactLink.href}>
+              {contactLink.label}
+            </Link>
           </Button>
         </div>
 
@@ -53,7 +61,7 @@ export function Header() {
             size="icon"
             aria-expanded={open}
             aria-label={
-              open ? 'Закрити меню' : 'Відкрити меню'
+              open ? UI_TEXT.closeMenu : UI_TEXT.openMenu
             }
             onClick={() => setOpen((prev) => !prev)}
           >
@@ -72,18 +80,18 @@ export function Header() {
       >
         <nav className="container flex flex-col gap-4">
           <Link
-            href="/"
+            href={aboutLink.href}
             className="text-lg font-medium text-text-secondary hover:text-primary transition-colors"
             onClick={() => setOpen(false)}
           >
-            Про компанію
+            {aboutLink.label}
           </Link>
           <Link
-            href="/projects"
+            href={projectsLink.href}
             className="text-lg font-medium text-text-secondary hover:text-primary transition-colors"
             onClick={() => setOpen(false)}
           >
-            Проєкти
+            {projectsLink.label}
           </Link>
           <Button
             asChild
@@ -91,7 +99,9 @@ export function Header() {
             size="lg"
             onClick={() => setOpen(false)}
           >
-            <Link href="#contact">Зв&apos;язатися</Link>
+            <Link href={contactLink.href}>
+              {contactLink.label}
+            </Link>
           </Button>
         </nav>
       </div>
