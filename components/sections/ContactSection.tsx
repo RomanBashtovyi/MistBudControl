@@ -10,20 +10,16 @@ export function ContactSection() {
       <div className="container">
         <div className="max-w-5xl mx-auto">
           <div className="text-center space-y-4 md:space-y-6 mb-10 md:mb-14">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-              <span className="text-charcoal">
-                Зв&apos;яжіться безпосередньо з{' '}
-              </span>
-              <span className="text-primary">
-                директором та головним архітектором
-              </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-charcoal">
+              Зв&apos;яжіться безпосередньо з директором
             </h2>
             <p className="text-lg md:text-xl text-text-secondary mx-auto leading-relaxed">
-              Жодних менеджерів чи посередників —
-              телефонуйте або пишіть прямо людині, яка
-              приймає ключові рішення. Отримайте авторську
-              консультацію від директора та архітектора
-              вашого проекту.
+              Не витрачайте час на посередників —
+              телефонуйте або пишіть напряму директору
+              компанії. Отримайте миттєву експертну оцінку
+              вашого проєкту, конкретні поради щодо
+              оптимального запуску заводу та план дій для
+              швидкого старту виробництва.
             </p>
           </div>
 
@@ -44,13 +40,13 @@ export function ContactSection() {
                     {DIRECTOR_CONTACT.name}
                   </h3>
                   <p className="text-lg md:text-xl text-text-secondary font-semibold">
-                    Директор та головний архітектор
+                    {DIRECTOR_CONTACT.position}
                   </p>
                   <p className="text-base md:text-lg text-text-muted leading-relaxed">
                     Особисто відповідаю на всі звернення,
                     контролюю архітектуру та готовий
                     обговорити технічні деталі, терміни
-                    виконання та вартість вашого проекту.
+                    виконання та вартість вашого проєкту.
                   </p>
                 </div>
 
@@ -94,15 +90,18 @@ export function ContactSection() {
                 </div>
 
                 <div className="pt-6">
-                  <p className="text-base md:text-lg text-text-secondary leading-relaxed">
-                    <span className="font-bold text-charcoal text-xl block mb-2">
+                  <div className="bg-background-secondary rounded-2xl p-6 md:p-8 shadow-inner">
+                    <p className="font-bold text-charcoal text-xl mb-2">
                       Чому варто зв&apos;язатися з
                       директором?
-                    </span>
-                    Ви отримаєте найшвидшу відповідь, прямий
-                    доступ до прийняття рішень та експертну
-                    консультацію без зайвих посередників.
-                  </p>
+                    </p>
+                    <p className="text-base md:text-lg text-text-secondary leading-relaxed">
+                      Ви отримаєте найшвидшу відповідь,
+                      прямий доступ до рішень та професійну
+                      експертну оцінку — без затримок і
+                      посередників.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

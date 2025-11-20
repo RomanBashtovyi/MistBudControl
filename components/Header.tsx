@@ -33,13 +33,13 @@ export function Header() {
             href="/"
             className="text-lg font-medium text-text-secondary hover:text-primary hover:underline underline-offset-8 transition-all whitespace-nowrap"
           >
-            Головна
+            Про компанію
           </Link>
           <Link
             href="/projects"
             className="text-lg font-medium text-text-secondary hover:text-primary hover:underline underline-offset-8 transition-all whitespace-nowrap"
           >
-            Проекти
+            Проєкти
           </Link>
           <Button size="default" asChild>
             <Link href="#contact">Зв&apos;язатися</Link>
@@ -76,14 +76,14 @@ export function Header() {
             className="text-lg font-medium text-text-secondary hover:text-primary transition-colors"
             onClick={() => setOpen(false)}
           >
-            Головна
+            Про компанію
           </Link>
           <Link
             href="/projects"
             className="text-lg font-medium text-text-secondary hover:text-primary transition-colors"
             onClick={() => setOpen(false)}
           >
-            Проекти
+            Проєкти
           </Link>
           <Button
             asChild

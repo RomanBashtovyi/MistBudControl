@@ -5,19 +5,39 @@ export function StatsSection() {
   const stats = [
     {
       value: COMPANY_STATS.projects,
-      label: 'реалізованих проектів',
+      label: (
+        <>
+          <span className="block">реалізованих</span>
+          <span className="block">проєктів</span>
+        </>
+      ),
     },
     {
       value: COMPANY_STATS.clients,
-      label: 'задоволених клієнтів',
+      label: (
+        <>
+          <span className="block">задоволених</span>
+          <span className="block">клієнтів</span>
+        </>
+      ),
     },
     {
       value: COMPANY_STATS.area,
-      label: 'м.кв. запроектованих площ',
+      label: (
+        <>
+          <span className="block">м² спроєктованих</span>
+          <span className="block">площ</span>
+        </>
+      ),
     },
     {
       value: COMPANY_STATS.recommendations,
-      label: 'наші клієнти нас рекомендують',
+      label: (
+        <>
+          <span className="block">рекомендацій</span>
+          <span className="block">клієнтів</span>
+        </>
+      ),
     },
   ]
 
@@ -55,14 +75,14 @@ export function StatsSection() {
         <div className="mx-auto mb-8 h-1 w-24 rounded-full bg-primary" />
         <div
           className={cn(
-            'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10 max-w-6xl mx-auto px-4'
+            'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10 max-w-6xl mx-auto px-2'
           )}
         >
           {stats.map((stat, index) => (
             <div
               key={index}
               className={cn(
-                'relative flex flex-col items-center justify-center text-center gap-3 md:gap-4 rounded-[28px] border border-white/10 bg-white/5 px-6 py-8 md:px-8 md:py-10 shadow-[0_25px_60px_rgba(0,0,0,0.35)] transition-transform duration-300 hover:-translate-y-1'
+                'relative flex flex-col items-center justify-center text-center gap-3 md:gap-4 rounded-[28px] border border-white/10 bg-white/5 px-6 py-8 md:px-6 md:py-10 shadow-[0_25px_60px_rgba(0,0,0,0.35)] transition-transform duration-300 hover:-translate-y-1'
               )}
             >
               <div
@@ -72,14 +92,14 @@ export function StatsSection() {
               />
               <div
                 className={cn(
-                  'relative text-3xl sm:text-6xl md:text-5xl font-bold text-primary drop-shadow-[0_8px_25px_rgba(243,112,33,0.35)]'
+                  'relative text-5xl sm:text-6xl md:text-5xl font-bold text-primary drop-shadow-[0_8px_25px_rgba(243,112,33,0.35)]'
                 )}
               >
                 {stat.value}
               </div>
               <h3
                 className={cn(
-                  'text-lg md:text-xl lg:text-2xl font-semibold text-white leading-snug px-2'
+                  'text-base lg:text-lg font-semibold text-white leading-tight tracking-tight px-1'
                 )}
               >
                 {stat.label}

@@ -10,10 +10,10 @@ export default async function ProjectsPage() {
       <div className="container py-12 md:py-16 lg:py-20">
         <div className="space-y-3 md:space-y-4 mb-8 md:mb-12">
           <h1 className="text-3xl md:text-4xl font-bold">
-            Наші проекти
+            Наші проєкти
           </h1>
           <p className="text-sm md:text-base lg:text-lg text-muted-foreground">
-            Перегляньте приклади наших реалізованих проектів
+            Перегляньте приклади наших реалізованих проєктів
             промислових об&apos;єктів
           </p>
         </div>
@@ -30,7 +30,7 @@ export default async function ProjectsPage() {
         ) : (
           <div className="text-center py-16 md:py-20 text-muted-foreground">
             <p className="text-sm md:text-base">
-              Проекти відсутні. Додайте перший проект у
+              Проєкти відсутні. Додайте перший проєкт у
               data/projects/
             </p>
           </div>

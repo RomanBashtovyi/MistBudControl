@@ -264,7 +264,7 @@
     @apply py-16 md:py-20 lg:py-24;
   }
   
-  /* Карточки проектів */
+  /* Карточки проєктів */
   .card-hover {
     @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
   }

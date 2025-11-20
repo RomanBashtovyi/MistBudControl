@@ -21,7 +21,7 @@ export function Footer() {
               />
             </div>
             <p className="text-base md:text-lg text-gray-300 leading-relaxed">
-              Професійне проектування промислових будівель та споруд
+              Професійне проєктування промислових будівель та споруд
             </p>
           </div>
 
@@ -74,7 +74,7 @@ export function Footer() {
                   href="/projects" 
                   className="text-gray-300 hover:text-primary transition-colors hover:underline underline-offset-4 inline-block"
                 >
-                  Проекти
+                  Проєкти
                 </Link>
               </li>
             </ul>

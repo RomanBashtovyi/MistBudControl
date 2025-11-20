@@ -3,26 +3,38 @@ import { Button } from '@/components/ui/button'
 
 export function HeroSection() {
   return (
-    <section className="bg-gradient-to-br from-background-secondary via-background to-background-secondary py-12 md:py-16 lg:py-20">
+    <section className="bg-gradient-to-br from-background-secondary via-background to-background-secondary pt-0 pb-10 md:py-12 lg:py-16 min-h-[90svh] flex items-center">
       <div className="container">
-        <div className="mx-auto text-center space-y-8 md:space-y-6 px-2">
-          <h1 className="text-5xl md:text-6xl sm:text-2xl font-bold leading-tight text-balance text-charcoal space-y-2">
-            <span className="block">
-              ПРОЕКТУЄМО ПРОМИСЛОВІ
+        <div className="mx-auto text-center space-y-6 md:space-y-6 px-2">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-balance text-primary space-y-2">
+            <span className="block ">
+              ПРОЄКТУЄМО ПРОМИСЛОВІ
             </span>
             <span className="block">
               БУДІВЛІ ТА СПОРУДИ
             </span>
           </h1>
 
-          <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center pt-6 md:pt-8 pb-2 md:pb-4">
+          <div className="mx-auto w-full space-y-1 text-text-secondary text-base md:text-xl leading-relaxed text-center md:text-center">
+            <p>
+              Повний цикл: від концепції та розміщення
+              обладнання до дозвільної документації,
+              авторського нагляду та введення об’єкта в
+              експлуатацію. Враховуємо технологічні,
+              екологічні, енергетичні вимоги та техумови
+              підключення інженерних систем, забезпечуючи
+              ефективну автоматизацію виробничих процесів.
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center pt-4 md:pt-8">
             <Button
               size="lg"
               className="w-full sm:w-auto"
               asChild
             >
               <Link href="/projects">
-                Переглянути проекти
+                Переглянути проєкти
               </Link>
             </Button>
             <Button
@@ -32,34 +44,9 @@ export function HeroSection() {
               asChild
             >
               <Link href="#contact">
-                Безкоштовна консультація
+                Консультація з архітектором
               </Link>
             </Button>
-          </div>
-
-          <div className="mx-auto w-full space-y-1 text-text-secondary text-lg md:text-xl leading-relaxed text-center md:text-center">
-            <p>
-              Комплексна розробка проектної документації для
-              нового будівництва, реконструкції чи
-              модернізації промислових об’єктів, виробничих
-              будівель, складів, логістичних центрів.
-            </p>
-
-            <p>
-              Це включає розрахунки, розміщення обладнання,
-              врахування технологічних, виробничих,
-              екологічних, енергетичних вимог, технічних
-              умов підключення інженерних систем,
-              автоматизації виробничих процесів.
-            </p>
-
-            <p>
-              Комплексний підхід охоплює всі етапи: розробка
-              концепції, робочих проектів, авторський та
-              технічний нагляд, виконавча документація,
-              дозвільна документація, введення об’єкта в
-              експлуатацію.
-            </p>
           </div>
         </div>
       </div>

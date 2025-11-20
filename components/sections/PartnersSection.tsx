@@ -7,36 +7,32 @@ export function PartnersSection() {
     <section className="section-spacing bg-background-secondary">
       <div className="container">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-10 md:mb-16 px-4">
-          <span className="text-charcoal">Наші </span>
+          <span className="text-primary">Наші </span>
           <span className="text-primary">партнери</span>
         </h2>
+        <p className="text-base md:text-lg text-text-muted text-center mx-auto mb-10 md:mb-14 px-4">
+          100+ клієнтів довіряють нашим архітекторам уже
+          понад 12 років завдяки точності проєктування та
+          якісному супроводу.
+        </p>
 
-        <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto px-4">
+        <div className="grid w-full max-w-5xl grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mx-auto px-4">
           {PARTNERS.map((partner) => (
-            <a
+            <div
               key={partner.id}
-              href={partner.website}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Відкрити сайт компанії ${partner.name}`}
-              className="group bg-white/95 rounded-[26px] shadow-[0_18px_40px_rgba(15,23,42,0.08)] p-6 sm:p-8 flex flex-col items-center justify-between text-center border border-slate-200 ring-1 ring-slate-100 hover:ring-primary/30 hover:-translate-y-1 transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary min-h-[230px]"
+              className="bg-white/95 rounded-[26px] shadow-[0_18px_40px_rgba(15,23,42,0.08)] p-6 sm:p-8 flex flex-col items-center justify-between text-center border border-slate-200 ring-1 ring-slate-100 min-h-[250px]"
             >
-              <div
-                className={`w-full flex-1 flex items-center justify-center mb-5 rounded-2xl p-4 h-28 transition-colors ${
-                  partner.logoBackgroundClass ??
-                  'bg-charcoal'
-                }`}
-              >
+              <div className="w-full flex items-center justify-center mb-6 rounded-2xl px-6 py-5 h-[170px] transition-colors bg-slate-100">
                 <Image
                   src={partner.logo}
                   alt={`Логотип компанії ${partner.name}`}
                   width={220}
                   height={90}
-                  className="w-full max-h-20 object-contain drop-shadow-md"
+                  className="w-full max-h-24 object-contain drop-shadow-md"
                 />
               </div>
               <div className="space-y-2 w-full">
-                <p className="font-bold text-base sm:text-lg text-charcoal leading-tight group-hover:text-primary transition-colors">
+                <p className="font-bold text-base sm:text-lg text-charcoal leading-tight">
                   {partner.name}
                 </p>
                 {partner.location && (
@@ -45,7 +41,7 @@ export function PartnersSection() {
                   </p>
                 )}
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </div>

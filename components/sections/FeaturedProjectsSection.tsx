@@ -15,11 +15,13 @@ export async function FeaturedProjectsSection() {
       <div className="container">
         <div className="space-y-4 md:space-y-6 text-center mb-12 md:mb-16 px-4">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-            <span className="text-charcoal">Наша </span>
-            <span className="text-primary">реалізація</span>
+            <span className="text-primary">
+              Реалізовані{' '}
+            </span>
+            <span className="text-primary">об’єкти</span>
           </h2>
           <p className="text-lg md:text-xl text-text-secondary  mx-auto leading-relaxed">
-            Перегляньте приклади наших реалізованих проектів
+            Перегляньте приклади наших реалізованих проєктів
             промислових об&apos;єктів
           </p>
         </div>
@@ -36,7 +38,7 @@ export async function FeaturedProjectsSection() {
         <div className="text-center">
           <Button variant="outline" size="lg" asChild>
             <Link href="/projects">
-              Переглянути всі проекти
+              Переглянути всі проєкти
             </Link>
           </Button>
         </div>

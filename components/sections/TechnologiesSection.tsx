@@ -120,7 +120,7 @@ export function TechnologiesSection() {
                 'text-3xl md:text-4xl font-bold'
               )}
             >
-              <span className={cn('text-charcoal')}>
+              <span className={cn('text-primary')}>
                 Наші{' '}
               </span>
               <span className={cn('text-primary')}>
@@ -131,12 +131,12 @@ export function TechnologiesSection() {
               className={cn('text-lg text-text-secondary')}
             >
               Інтегруємо технології, процеси та команду, щоб
-              забезпечити стабільну реалізацію проектів.
+              забезпечити стабільну реалізацію проєктів.
             </p>
           </div>
           <div
             className={cn(
-              'grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mx-auto lg:w-11/12'
+              'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mx-auto lg:w-11/12'
             )}
           >
             {BENEFITS.map((benefit, index) => {
