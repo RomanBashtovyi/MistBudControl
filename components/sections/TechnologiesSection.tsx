@@ -1,10 +1,15 @@
-import { TECHNOLOGIES, BENEFITS } from '@/constants/site'
+import {
+  TECHNOLOGIES,
+  BENEFITS,
+  SECTION_HEADINGS,
+} from '@/constants/site'
 import { cn } from '@/lib/utils'
 import { Cog, Handshake, TrendingUp } from 'lucide-react'
 import Image from 'next/image'
 
 export function TechnologiesSection() {
   const benefitIcons = [Handshake, Cog, TrendingUp]
+  const { technologies } = SECTION_HEADINGS
 
   return (
     <section
@@ -44,10 +49,10 @@ export function TechnologiesSection() {
               )}
             >
               <span className={cn('text-white')}>
-                Сучасні технології{' '}
+                {technologies.title.part1}
               </span>
               <span className={cn('text-primary')}>
-                автоматизації
+                {technologies.title.part2}
               </span>
             </h2>
             <p
@@ -55,11 +60,7 @@ export function TechnologiesSection() {
                 'text-lg md:text-xl text-white/80'
               )}
             >
-              Ми забезпечуємо повний супровід команди на
-              всіх етапах проєкту — від впровадження
-              BIM-концепцій і координації задач у системі
-              Worksection до створення фінальної
-              візуалізації.
+              {technologies.description}
             </p>
           </div>
 
@@ -124,7 +125,7 @@ export function TechnologiesSection() {
                 'text-3xl md:text-4xl font-bold text-primary'
               )}
             >
-              Інтегруємо технології, процеси та команду
+              {technologies.integrationTitle}
             </h2>
           </div>
           <div

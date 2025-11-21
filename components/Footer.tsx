@@ -89,10 +89,22 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 md:pt-10 text-center">
-          <p className="text-sm md:text-base text-gray-400">
+        <div className="pt-8 md:pt-10 text-sm md:text-base text-gray-400 space-y-3 text-center">
+          <p>
             &copy; {new Date().getFullYear()}{' '}
             {SITE_CONFIG.name}. {FOOTER_TEXT.copyright}
+          </p>
+          <p>
+            Розроблено, протестовано та підтримується
+            командою{' '}
+            <a
+              href="https://jet.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-primary transition-colors hover:underline underline-offset-4"
+            >
+              Jet.Dev
+            </a>
           </p>
         </div>
       </div>

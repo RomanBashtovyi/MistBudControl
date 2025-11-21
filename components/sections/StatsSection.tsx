@@ -1,14 +1,16 @@
-import { COMPANY_STATS } from '@/constants/site'
+import { COMPANY_STATS, SECTION_HEADINGS } from '@/constants/site'
 import { cn } from '@/lib/utils'
 
 export function StatsSection() {
+  const { labels } = SECTION_HEADINGS.stats
+
   const stats = [
     {
       value: COMPANY_STATS.projects,
       label: (
         <>
-          <span className="block">реалізованих</span>
-          <span className="block">проєктів</span>
+          <span className="block">{labels.projects.line1}</span>
+          <span className="block">{labels.projects.line2}</span>
         </>
       ),
     },
@@ -16,8 +18,8 @@ export function StatsSection() {
       value: COMPANY_STATS.clients,
       label: (
         <>
-          <span className="block">задоволених</span>
-          <span className="block">клієнтів</span>
+          <span className="block">{labels.clients.line1}</span>
+          <span className="block">{labels.clients.line2}</span>
         </>
       ),
     },
@@ -25,8 +27,8 @@ export function StatsSection() {
       value: COMPANY_STATS.area,
       label: (
         <>
-          <span className="block">м² спроєктованих</span>
-          <span className="block">площ</span>
+          <span className="block">{labels.area.line1}</span>
+          <span className="block">{labels.area.line2}</span>
         </>
       ),
     },
@@ -34,8 +36,8 @@ export function StatsSection() {
       value: COMPANY_STATS.recommendations,
       label: (
         <>
-          <span className="block">рекомендацій</span>
-          <span className="block">клієнтів</span>
+          <span className="block">{labels.recommendations.line1}</span>
+          <span className="block">{labels.recommendations.line2}</span>
         </>
       ),
     },
@@ -69,8 +71,8 @@ export function StatsSection() {
             'text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-10 md:mb-12 px-4'
           )}
         >
-          <span className="text-white">Досвід і </span>
-          <span className="text-primary">результати</span>
+          <span className="text-white">{SECTION_HEADINGS.stats.title.part1}</span>
+          <span className="text-primary">{SECTION_HEADINGS.stats.title.part2}</span>
         </h2>
         <div className="mx-auto mb-8 h-1 w-24 rounded-full bg-primary" />
         <div

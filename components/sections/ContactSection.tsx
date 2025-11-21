@@ -1,7 +1,12 @@
 import { Mail, Phone } from 'lucide-react'
-import { DIRECTOR_CONTACT } from '@/constants/site'
+import {
+  DIRECTOR_CONTACT,
+  SECTION_HEADINGS,
+} from '@/constants/site'
 
 export function ContactSection() {
+  const { contact } = SECTION_HEADINGS
+
   return (
     <section
       id="contact"
@@ -11,7 +16,7 @@ export function ContactSection() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center space-y-4 md:space-y-6 mb-10 md:mb-14">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary">
-              Готові почати новий проєкт?
+              {contact.title}
             </h2>
           </div>
 
@@ -54,7 +59,7 @@ export function ContactSection() {
                     </div>
                     <div className="text-center md:text-left flex-1">
                       <div className="text-sm text-text-muted">
-                        Телефонуйте прямо зараз
+                        {contact.phoneLabel}
                       </div>
                       <span className="font-bold text-lg sm:text-xl md:text-2xl text-primary block leading-tight break-words">
                         {DIRECTOR_CONTACT.phone}
@@ -71,7 +76,7 @@ export function ContactSection() {
                     </div>
                     <div className="text-center md:text-left flex-1">
                       <div className="text-sm text-text-muted">
-                        Або напишіть на email
+                        {contact.emailLabel}
                       </div>
                       <span className="font-semibold text-base sm:text-lg text-primary block break-words">
                         {DIRECTOR_CONTACT.email}

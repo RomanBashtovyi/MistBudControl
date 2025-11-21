@@ -1,19 +1,21 @@
 import Image from 'next/image'
 
-import { PARTNERS } from '@/constants/site'
+import {
+  PARTNERS,
+  SECTION_HEADINGS,
+} from '@/constants/site'
 
 export function PartnersSection() {
+  const { title, description } = SECTION_HEADINGS.partners
+
   return (
     <section className="section-spacing bg-background-secondary">
       <div className="container">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-10 md:mb-16 px-4">
-          <span className="text-primary">Наші </span>
-          <span className="text-primary">партнери</span>
+          <span className="text-primary">{title}</span>
         </h2>
         <p className="text-base md:text-lg text-text-muted text-center mx-auto mb-10 md:mb-14 px-4">
-          100+ клієнтів довіряють нашим архітекторам уже
-          понад 12 років завдяки точності проєктування та
-          якісному супроводу.
+          {description}
         </p>
 
         <div className="grid w-full max-w-5xl grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mx-auto px-4">

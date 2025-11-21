@@ -8,7 +8,7 @@
 - **React 19**
 - **TypeScript**
 - **Tailwind CSS v4**
-- **shadcn/ui** (сірі компоненти)
+- **shadcn/ui**
 
 ## Структура проєкту
 
